@@ -28,6 +28,38 @@ const cartaImagem = document.getElementById('carta-imagem');
 const descriçãoCarta = document.getElementById('descrição-carta');
 const sortearBtn = document.getElementById('sortear-btn');
 const embaralharBtn = document.getElementById('embaralhar-btn');
+let loopInterval; // Stores the interval ID
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Function to start looping through the cards
+async function startLoop() {
+    if (loopInterval) return; // Prevent multiple loops
+
+    loopInterval = setInterval(async () => {
+        for (const carta of cartas) {
+            cartaImagem.src = carta.imagem;
+            cartaImagem.style.display = 'block';
+            descriçãoCarta.textContent = carta.descricao;
+            await sleep(50); // Wait 50ms before the next card
+        }
+    }, cartas.length * 50); // The interval should match the full cycle time
+}
+
+// Function to stop the loop and choose a random card
+function stopLoopAndChoose() {
+    if (loopInterval) {
+        clearInterval(loopInterval);
+        loopInterval = null;
+    }
+
+    const cartaSorteada = cartas[Math.floor(Math.random() * cartas.length)];
+    cartaImagem.src = cartaSorteada.imagem;
+    cartaImagem.style.display = 'block';
+    descriçãoCarta.textContent = cartaSorteada.descricao;
+}
 
 function iniciarAnimação() {
     animacaoContainer.style.display = 'block';
@@ -41,16 +73,8 @@ function pararAnimação() {
     animacaoContainer.style.display = 'none';
 }
 
-embaralharBtn.addEventListener('click', function() {
-    iniciarAnimação();
-    setTimeout(() => {
-        pararAnimação()
-    }, 1500);
-})
+// Button to start looping through cards
+embaralharBtn.addEventListener("click", startLoop);
 
-sortearBtn.addEventListener("click", function() {
-    const cartaSorteada = cartas[Math.floor(Math.random() * cartas.length)];
-    cartaImagem.src = cartaSorteada.imagem;
-    cartaImagem.style.display = 'block';
-    descriçãoCarta.textContent = cartaSorteada.descricao;
-})
+// Button to stop looping and pick a random card
+sortearBtn.addEventListener("click", stopLoopAndChoose);
