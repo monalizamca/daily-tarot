@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Delius&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Delius&family=Send+Flowers&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
+
 html {
-    background-image: url("assets/photo-1620357027325-6c54d8e5139b.avif");
+    background-image: url("assets/pexels-photo.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
+}
+
+h1 {
+font-family: "Borel";
+color: rgb(190, 129, 15);
 }
 
 body {
@@ -22,7 +30,9 @@ body {
 }
 
 #carta-container {
-    margin: 20px 0;
+    border: 1.5px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(328deg, rgb(170, 111, 0), rgb(140, 213, 255));
 }
 
 #carta-imagem {
@@ -30,10 +40,11 @@ body {
     border-radius: 10px;
 }
 
-#descricao-carta {
+#descrição-carta {
+    font-family: "Zain";
     margin-top: 10px;
-    font-size: 18px;
-    color: #333;
+    font-size: 25px;
+    color:rgb(190, 129, 15);
 }
 
 #animacao-container {
@@ -43,31 +54,20 @@ body {
     overflow: hidden;
 }
 
-.carta-animada {
-    position: absolute;
-    width: 60px;
-    height: 90px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    animation: embaralhar 1.5s infinite;
-    opacity: 0;
-}
-
-
-
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+    font-family: "Zain";
+    padding: 5px 10px;
+    font-size: 20px;
     cursor: pointer;
     border: none;
-    background-color: #007bff;
+    background-color: rgb(190, 129, 15);
     color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #ffffff;
+    color: rgb(190, 129, 15);
 }
