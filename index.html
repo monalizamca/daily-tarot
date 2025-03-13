@@ -7,18 +7,32 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Tarot do dia</h1>
-        <div id="carta-container">
+        <h1>Daily Tarot</h1>
+        <div id="conteudo">
+        <div id="carta-container" style="display: none;">
             <img id="carta-imagem" src="" alt="Carta principal" style="display: none;">
         </div>
-        <p id="descrição-carta">Clique no botão para sortear uma carta</p>
-        <div id="animação-container">
+        <div>
+            <i id="coração" class="bi bi-suit-heart"> </i>
+            <p id="clique">What's your Major Arcana of the day? 
+                <br>Click below and find out.</p>
+            <p id="descrição-carta" style="display: none;"></p>
+            <p id="descrição-extra" style="display: none;"></p>
         </div>
-        <button id="embaralhar-btn">Embaralhar</button>
-        <button id="sortear-btn">Sortear Carta</button>
     </div>
+    <div class="buttons-container">
+        <button id="embaralhar-btn">Shuffle</button>
+        <button id="sortear-btn">Draw a Card</button>
+    </div>
+    </div>
+    <footer>
+        <p>
+        Developed by: Monaliza Cristina <a href="https://github.com/monalizamca">@monalizamca</a>
+        </p>
+    </footer>
 </body>
 </html>
