@@ -60,7 +60,7 @@ async function startLoop() {
     }, 100);
 }
 
-// Function to stop the loop and choose a random card
+// Função p parar o loop e escolher uma carta
 function stopLoopAndChoose() {
     if (loopInterval) {
         clearInterval(loopInterval);
@@ -81,8 +81,8 @@ function stopLoopAndChoose() {
     descricao2.style.display = 'block';
 }
 
-// Button to start looping through cards
+// btn p começar o loop
 embaralharBtn.addEventListener("click", startLoop);
 
-// Button to stop looping and pick a random card
+// btn para parar o loop e escolher uma carta
 sortearBtn.addEventListener("click", stopLoopAndChoose);
